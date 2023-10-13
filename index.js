@@ -4,6 +4,20 @@ const express = require('express');
 const morgan = require('morgan');
 const recipes = require('./src/routes/recipes'); // Guardamos el router de las recetas
 const users = require('./src/routes/recipes'); // Guardamos el router de los usuarios
+const path = require('node:path'); // Para trabajar con las rutas de las carpetas de la aplicacion
+const { engine } = require('express-handlebars'); // Importamos el motor de handlebars
+
+//Configuramos handlebars como motor de vistas para la aplicacion
+app.set('views', path.join(__dirname, 'views')) //Ubicacion de la carpeta views
+app.engine('.hbs', engine({
+    defaultLayout: 'main', // Nombre de la vista principal
+    layoutsDir: path.join(app.get('views'), 'layouts'), //Ubicacion de la vista principal
+    partialsDir: path.join(app.get('views'), 'partials'), //Ubicacion de los elementos de la vista comunes (nav, footer)
+    extname: '.hbs' // Extension de las vistas
+}))
+app.set('view engine', '.hbs'); // Establecemos como motor de vistas a handlebars
+
+
 
 // Conifguramos el puerto donde se ubicará nuestro servidor
 // En caso de tener un valor 'nully' la variable de entorno del puerto, usaremos el puerto 1234 por defecto para nuestro servidor
