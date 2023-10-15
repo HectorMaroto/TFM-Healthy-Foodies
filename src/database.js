@@ -3,7 +3,8 @@ const database = {
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'tfm'
+    database: 'tfm',
+    port: 3360
 }
 
 // Exportamos el objeto database

@@ -1,0 +1,20 @@
+<div class="main-container-edit">
+    <form action="/recipes/editRecipe/{{receta.id}}" method="POST">
+        <div class="input-field-edit">
+            <input type="text" name="nombre" value="{{receta.nombre}}" placeholder="Nombre" required autofocus>
+        </div>
+        <div class="input-field-edit">
+            <input type="text" name="ingredientes" value="{{receta.ingredientes}}" placeholder="Ingredientes" required>
+        </div>
+        <div class="input-field-edit">
+            <textarea name="descripcion" id="descripcion"  cols="10" rows="10" placeholder="Describa su receta aquí"
+                required>{{receta.descripcion}}</textarea>
+        </div>
+        <div class="input-field-edit">
+            <input type="text" name="minutos_preparacion" value="{{receta.minutos_preparacion}}" placeholder="Tiempo de preparación de la receta (min)" required>
+        </div>
+        <div class="input-field-edit">
+            <input type="submit" value="Actualizar Receta">
+        </div>
+    </form>
+</div>

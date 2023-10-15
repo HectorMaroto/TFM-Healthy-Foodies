@@ -1,0 +1,20 @@
+<div class="main-container-list">
+    <div class="card-container-list">
+        {{#each recetas}} <!--Recorremos todo el array de recetas que pasamos desde el backend-->
+        <h3 class="nombre-receta-list">{{nombre}}</h3>
+        <p>Ingredientes:</p>
+        <div class="ingrendientes-list">{{ingredientes}}</div>
+        <p>Descripcion de la receta:</p>
+        <div class="descripcion-list">{{descripcion}}</div>
+        <p><span>Minutos de preparación: </span><span>{{minutos_preparacion}}</span></p>
+        <p>
+            <a href="/recipes/editRecipe/{{id}}" class="btn-edit">Editar receta</a>
+            <a href="/recipes/deleteRecipe/{{id}}" class="btn-delete">Eliminar receta</a>
+        </p>
+        {{else}} <!--Para cuando no haya recetas guardadas-->
+        <div class="no-recipe">
+            <p>No hay ninguna receta guardada todavía.<a href="/recipes/addRecipe"> Crea tu primera receta!</a></p>
+        </div>
+        {{/each}}
+    </div>
+</div>

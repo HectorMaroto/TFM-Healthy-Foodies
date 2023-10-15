@@ -1,12 +1,12 @@
 // Importamos el modulo de mysql de express, el objeto database y el metodo promisify
 const mysql = require('mysql');
-const database = require('./database.js');
+const database = require('./database.js')
 const { promisify } = require('node:util');
 
 // Vamos a crear una 'pool' de conexiones para evitar cerrar y abrir la conexion a la base de datos
 // De esta manera solo liberamos los recursos usados cuando no usemos la BBDD y la usamos de nuevo sin
 // tener que abrir otra vez la conexion
-const pool = mysql.createPool(database);
+const pool = mysql.createPool(database)
 
 //Creamos la conexion de la pool con la base de datos y manejamos los 3 errores de conexion mas comunes
 pool.getConnection((err, connection) => {
@@ -21,11 +21,10 @@ pool.getConnection((err, connection) => {
             console.error('DATABASE CONNECTION WAS REFUSED');
         }
     }
-
-// Si la conexion es exitosa liberamos los recursos, pero la pool sigue funcionando para poteriores peticiones a la base
+// Si la conexion es exitosa liberamos los recursos utilizados, pero la pool sigue funcionando para poteriores peticiones a la base
     if (connection) connection.release(); 
     console.log('DB is connected');
-    return; // Retornamos la conexion
+    return; // Retornamos la pool de conexiones
 })
 
 //PROMISIFY con POOL QUERIES
