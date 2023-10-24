@@ -46,7 +46,7 @@ app.use(users)
 app.use('/', home);
 
 
-//Carpeta Public y archivos estaticos como estilos, imagenes... Dejamos definida sus ubicacion con path.join
+//Carpeta Public para archivos estaticos como estilos, imagenes, scripts... Dejamos definida sus ubicacion con path.join
 app.use(express.static(path.join(__dirname, 'public')))
 
 // Iniciamos el servidor de la app con 'npm run start' (configurado como script de npm en package.json)

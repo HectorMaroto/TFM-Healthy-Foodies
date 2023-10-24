@@ -5,6 +5,7 @@ const pool = require('../DB-conn.js'); // Para las peticiones a la base de datos
 
 //Obtener listado de recetas
 router.get('/', async (req, res) => {
+    
     const recetas = await pool.query('SELECT * FROM recetas');
     res.render('recipes/listRecipes', { recetas }); // Renderizamos la lista de de recetas y pasamos recetas a handlebars
 })

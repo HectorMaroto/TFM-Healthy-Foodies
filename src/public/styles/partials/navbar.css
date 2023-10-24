@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+.navbar{
+    position: sticky;
+    width: 100%;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 999;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 3px 10px;
+    background: linear-gradient(to bottom, #0049b0, #0049b0, #3083ff, #629bf1);
+    height: auto;
+    border-bottom: 2px solid #000;
+}
+
+.title{
+    font-family: 'Tilt Neon', sans-serif;
+    font-size: 36px;
+    margin: 10px 15px;
+}
+
+.nav .items{
+    display: flex;
+    height: auto;
+}
+
+.nav .items > .item{
+    list-style: none;
+    height: 100%;
+    margin: 5px 10px;
+    text-align: center;
+}
+
+.nav .items > .item a{
+    font-family: 'Tilt Neon', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+    height: 100%;
+    width: 100%;
+    transition: all 0.4s ease;
+}
+
+.dropdown,
+.btn-dropdown{
+    display: none;
+}
+
+.nav .items > .item a:hover{
+    cursor: pointer;
+    color: white;
+}
+
+@media (max-width:936px){
+    .nav .items{
+        display: none;
+    }
+
+    .nav{
+        margin: 0;
+        padding: 6px 10px;
+    }
+
+    .btn-dropdown{
+        display: inline-block;
+        background-color: #3083ff;
+        color: #fff;
+        border: 2px solid #fff;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .dropdown{
+        visibility: hidden;
+        position: fixed;
+        top: 62px;
+        right: 0;
+        z-index: 999;
+    }
+
+    .dropdown .items-drop{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .dropdown .items-drop > .item{
+        list-style: none;
+        height: 100%;
+        margin: 5px 10px;
+        text-align: center;
+        background-color: #3083ff;
+        margin: 0;
+        border: 1px solid white;
+        padding: 7px 10px;
+    }
+    
+    .dropdown .items-drop > .item a{
+        font-family: 'Tilt Neon', sans-serif;
+        font-size: 20px;
+        text-decoration: none;
+        color: #000;
+        height: 100%;
+        width: 100%;
+        transition: all 0.4s ease;
+    }
+
+    .dropdown .items-drop > .item a:hover{
+        color: white;
+        cursor: pointer;
+    }
+    .hide-dropdown{ /*Para mostrar o esconder el menu al pulsar el boton*/
+        display: block;
+        visibility: visible;
+    }
+}
+
+
+@media (max-width:344px){
+    .dropdown{
+        top: 108px;
+    }
+}

@@ -1,5 +1,5 @@
 <div class="main-container-edit">
-    <form action="/recipes/editRecipe/{{receta.id}}" method="POST">
+    <form action="/recipes/editRecipe/{{receta.id}}" method="POST" class="form-edit">
         <div class="input-field-edit">
             <input type="text" name="nombre" value="{{receta.nombre}}" placeholder="Nombre" required autofocus>
         </div>
@@ -7,7 +7,7 @@
             <input type="text" name="ingredientes" value="{{receta.ingredientes}}" placeholder="Ingredientes" required>
         </div>
         <div class="input-field-edit">
-            <textarea name="descripcion" id="descripcion"  cols="10" rows="10" placeholder="Describa su receta aquí"
+            <textarea style="height: 100px;" name="descripcion" id="descripcion"  cols="10" rows="10" placeholder="Describa su receta aquí"
                 required>{{receta.descripcion}}</textarea>
         </div>
         <div class="input-field-edit">

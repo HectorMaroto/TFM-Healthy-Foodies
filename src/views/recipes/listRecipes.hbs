@@ -1,20 +1,30 @@
-<div class="main-container-list">
-    <div class="card-container-list">
-        {{#each recetas}} <!--Recorremos todo el array de recetas que pasamos desde el backend-->
-        <h3 class="nombre-receta-list">{{nombre}}</h3>
-        <p>Ingredientes:</p>
-        <div class="ingrendientes-list">{{ingredientes}}</div>
-        <p>Descripcion de la receta:</p>
-        <div class="descripcion-list">{{descripcion}}</div>
-        <p><span>Minutos de preparación: </span><span>{{minutos_preparacion}}</span></p>
-        <p>
-            <a href="/recipes/editRecipe/{{id}}" class="btn-edit">Editar receta</a>
-            <a href="/recipes/deleteRecipe/{{id}}" class="btn-delete">Eliminar receta</a>
-        </p>
-        {{else}} <!--Para cuando no haya recetas guardadas-->
-        <div class="no-recipe">
-            <p>No hay ninguna receta guardada todavía.<a href="/recipes/addRecipe"> Crea tu primera receta!</a></p>
-        </div>
-        {{/each}}
-    </div>
+<div class="intro">
+    <b>*¡Hola Usuario</b>, aquí podrás guardar tus recetas saludables favoritas para poder hacerlas siempre que quieras, o incluso compartirlas con quien quieras!
 </div>
+<div class="add-recipe-btn">
+    <a href="/recipes/addRecipe">Guardar Nueva Receta</a>
+</div>
+<section class="main-container-list">
+    {{#each recetas}}<!--Recorremos todo el array de recetas que obtenemos de la BBDD y pasamos desde el backend--> 
+    <article class="card-container-list">
+        <h3 class="nombre-receta-list">{{nombre}}</h3>
+        <p>Ingredientes</p>
+        <div class="ingredientes-list">{{ingredientes}}</div>
+        <p>Descripción y preparación de la receta</p>
+        <div class="descripcion-list">{{descripcion}}</div>
+        <p><span>Minutos de preparación &sim; </span><span>{{minutos_preparacion}} min</span></p>
+        <div class="btns">
+            <span class="edit-list">
+                <a href="/recipes/editRecipe/{{id}}">Editar Receta</a>
+            </span>
+            <span class="delete-list">
+                <a href="/recipes/deleteRecipe/{{id}}">Eliminar Receta</a>
+            </span>
+        </div>
+    </article>
+        {{else}} <!--Si no hay recetas guardadas...-->
+        <div class="no-recipe">
+            <p>No hay ninguna receta guardada todavía. <a href="/recipes/addRecipe">Crea tu primera receta aquí!</a></p>
+        </div>
+    {{/each}}
+</section>

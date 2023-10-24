@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+html{
+    font-family: 'Lato', sans-serif;
+}
+
+.intro{
+    margin: 25px auto;
+    height: auto;
+    background-color: bisque;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    width: auto;
+    font-size: 18px;
+}
+
+.main-container-list{
+    width: 100%;
+    padding: 0;
+    margin: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.main-container-list > .card-container-list{
+    margin: 0 5px;
+    background: linear-gradient(to bottom, #0242a2, #032d6b, #000, #000, #3e3e3e);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 5px 3px 10px #000;
+    transition: all 0.5s ease;
+    max-width: 500px;
+    height: fit-content;
+    opacity: 0;
+}
+
+.card-container-list .nombre-receta-list{
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+}
+
+.card-container-list p{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.card-container-list .ingredientes-list,
+.card-container-list .descripcion-list{
+    color: rgb(247, 230, 209);
+}
+
+.card-container-list .btns{
+    display: flex;
+    justify-content: right;
+}
+
+.card-container-list .edit-list{
+    margin-right: 20px;
+    background-color: #00ac45;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+.card-container-list .edit-list a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card-container-list .delete-list{
+    background-color: #b10000;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+.card-container-list .delete-list a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card-container-list:hover{
+    transform: scale(1.05);
+}
+
+.add-recipe-btn{
+    text-align: center;
+    width: 150px;
+    height: auto;
+    margin: 20px auto;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #3083ff;
+    transition: all 0.7s ease;
+    font-family: 'Lato', sans-serif;
+    box-shadow: 2px 5px 10px #000;
+}
+
+.add-recipe-btn a{
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.add-recipe-btn:hover{
+    width: 180px;
+    background-color: #032d6b;
+    box-shadow: 2px 5px 20px #000;
+}
+
+.add-recipe-btn a:hover{
+    color: #e9e9e9;
+}
+
+.no-recipe{
+    width: 100%;
+    margin: 15px 10px 15px 10px;
+    background-color: #3083ff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 2px solid #000;
+    text-align: center;
+    box-shadow: 2px 3px 10px #000;
+    transition: all 0.4s ease;
+}
+
+.no-recipe p{
+    color: #000;
+    font-size: large;
+    font-family: 'Tilt Neon', sans-serif;
+}
+
+.no-recipe p a{
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.no-recipe:hover{
+    background-color: #0242a2;
+    box-shadow: 2px 5px 15px #000;
+}
+
+.no-recipe p a:hover{
+    font-size: 24px;
+}
+
+@media (max-width:330px){
+    .main-container-list > .card-container-list{
+        font-size: 12px;
+    }
+    
+    .main-container-list > .card-container-list p{
+        font-size: 14px;
+    }
+
+        .card-container-list:hover {
+            transform: scale(1.02);
+        }
+    
+}

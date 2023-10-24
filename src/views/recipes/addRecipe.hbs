@@ -1,5 +1,5 @@
 <div class="main-container-add">
-    <form action="/recipes/addRecipe" method="POST">
+    <form action="/recipes/addRecipe" method="POST" class="form">
         <div class="input-field-add">
             <input type="text" name="nombre" placeholder="Nombre" required autofocus>
         </div>
@@ -7,7 +7,7 @@
             <input type="text" name="ingredientes" placeholder="Ingredientes" required>
         </div>
         <div class="input-field-add">
-            <textarea name="descripcion" id="descripcion" cols="10" rows="10" placeholder="Describa su receta aquí" required></textarea>
+            <textarea style="height: 100px;" name="descripcion" id="descripcion" cols="10" rows="10" placeholder="Describa su receta aquí" required></textarea>
         </div>
         <div class="input-field-add">
             <input type="text" name="minutos_preparacion" placeholder="Tiempo de preparación de la receta (min)" required>

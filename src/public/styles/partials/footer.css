@@ -1,0 +1,44 @@
+.foot{
+    width: 100%;
+    margin: 300px 0 0 0;
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(to bottom, #0049b0, #0049b0, #3083ff, #629bf1);
+    flex-wrap: wrap;
+    height: auto;
+}
+
+.section h3,
+.section h4{
+    color: #fff;
+}
+
+.section{
+    max-width: 500px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.section p{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.section.links{
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
+
+.section.links a{
+    color: #000;
+    text-decoration: none;
+    transition: all 0.4s ease-out;
+}
+
+.section.links a:hover{
+    color: #ffffff;
+    text-decoration: underline;
+}

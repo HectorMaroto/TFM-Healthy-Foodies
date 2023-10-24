@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+.main-container-add{
+    width: 100%;
+    height: auto;
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    background: linear-gradient(to bottom, #0242a2, #032d6b, #000, #000, #3e3e3e);
+    padding: 45px 30px;
+    border-radius: 5px;
+    box-shadow: 2px 5px 10px #000;
+    transition: all 0.5s ease;
+    width: 600px;
+    height: 400px;
+}
+
+.form > .input-field-add input,
+.form .input-field-add textarea{
+    width: 400px;
+    height: 30px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    transition: all 0.5s ease;
+}
+
+.form >.input-field-add input:focus,
+.form .input-field-add textarea:focus{
+    box-shadow: 0 0 5px #fff, 
+                0 0 10px #fff;
+}
+
+.form >.input-field-add input::placeholder,
+.form .input-field-add textarea::placeholder{
+    color: #aaa9a9;
+}
+
+.form .input-field-add input[type="submit"]{
+    cursor: pointer;
+}
+
+.form .input-field-add input[type="submit"]:hover{
+    width: 153px;
+    background-color: #032d6b;
+}
+
+@media (max-width: 682px){
+    .form{
+        padding: 35px 20px;
+        width: auto;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 475px){
+    .form > .input-field-add input,
+    .form .input-field-add textarea{
+        width: 200px;
+        font-size: 16px;
+    }
+}
