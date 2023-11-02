@@ -7,6 +7,7 @@ const users = require('./routes/users.js'); // Guardamos el router de los usuari
 const path = require('node:path'); // Para trabajar con las rutas de las carpetas de la aplicacion
 const { engine } = require('express-handlebars'); // Importamos el motor de handlebars
 const home = require('./routes/home');
+const errorRouter = require('./routes/error.js');
 const app = express(); // Inicializamos express
 
 
@@ -42,8 +43,10 @@ app.use(express.urlencoded({ extended: false })); // Para aceptar los datos que 
 app.use('/recipes', recipes)
 // Para la seccion de usuarios
 app.use(users)
-//Pagina de inicio
+// Pagina de inicio
 app.use('/', home);
+// Pagina de error
+app.use('/', errorRouter);
 
 
 //Carpeta Public para archivos estaticos como estilos, imagenes, scripts... Dejamos definida sus ubicacion con path.join

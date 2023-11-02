@@ -1,3 +1,6 @@
+// En este fragmento de codigo creamos una animacion para que las recetas guardadas por el usuario vayan 
+// apareciendo segun scrollea por la pagina de 'Tus recetas'
+
 const elementos = document.querySelectorAll('.card-container-list');
 
 function mostrarScroll() {

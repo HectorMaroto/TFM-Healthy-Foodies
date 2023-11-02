@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-html{
+body{
     font-family: 'Lato', sans-serif;
 }
 
@@ -36,6 +36,7 @@ html{
     max-width: 500px;
     height: fit-content;
     opacity: 0;
+    overflow-wrap: break-word;
 }
 
 .card-container-list .nombre-receta-list{
@@ -88,7 +89,7 @@ html{
 }
 
 .card-container-list:hover{
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .add-recipe-btn{
@@ -156,7 +157,7 @@ html{
     font-size: 24px;
 }
 
-@media (max-width:330px){
+@media (max-width:480px){
     .main-container-list > .card-container-list{
         font-size: 12px;
     }
@@ -164,9 +165,4 @@ html{
     .main-container-list > .card-container-list p{
         font-size: 14px;
     }
-
-        .card-container-list:hover {
-            transform: scale(1.02);
-        }
-    
 }

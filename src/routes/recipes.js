@@ -2,10 +2,10 @@ const express = require('express');
 // Creamos un router para manejar las rutas al servidor
 const router = express.Router();
 const pool = require('../DB-conn.js'); // Para las peticiones a la base de datos necesitaremos la pool creada
+const { validatePartialRecipe, validateRecipe } = require('../validations/recipeSchema.js');
 
 //Obtener listado de recetas
 router.get('/', async (req, res) => {
-    
     const recetas = await pool.query('SELECT * FROM recetas');
     res.render('recipes/listRecipes', { recetas }); // Renderizamos la lista de de recetas y pasamos recetas a handlebars
 })
@@ -16,16 +16,24 @@ router.get('/addRecipe', (req, res) => { // Obtenemos la vista del formulario pa
 })
 
 //Añadir receta
-router.post('/addRecipe', async (req, res) => { //Usamos funcion asincrona porque no queremos que esto se ejecute al iniciar la app
+router.post('/addRecipe', async (req, res) => {
+    //Usamos funcion asincrona porque no queremos que esto se ejecute al iniciar la app
     const { nombre, ingredientes, descripcion, minutos_preparacion } = req.body; // Extraemos el cuerpo de la peticion mandada por el formulario al añadir una nueva receta
-    const newRecipe = { // Guardamos en un objeto los datos obtenidos del usuario
+    const newRecipe = {
+        // Guardamos en un objeto los datos obtenidos del usuario
         nombre,
         ingredientes,
         descripcion,
-        minutos_preparacion
+        minutos_preparacion,
+    };
+    //Validamos que los datos introducidos son correctos
+    const result = validateRecipe(newRecipe);
+    if (result.error) {
+        res.redirect('/errorPage')
+    } else {
+        await pool.query("INSERT INTO recetas SET ?", [result]); // Insertamos los datos en la base de datos
+        res.redirect("/recipes"); // Redirigmos automaticamente al usuario a nuestras recetas guardadas
     }
-    await pool.query('INSERT INTO recetas SET ?', [newRecipe]); // Insertamos los datos en la base de datos
-    res.redirect('/recipes') // Redirigmos automaticamente al usuario a nuestras recetas guardadas
 })
 
 //Obtener formulario para editar receta
@@ -43,10 +51,16 @@ router.post('/editRecipe/:id', async (req, res) => {
         nombre,
         ingredientes,
         descripcion,
-        minutos_preparacion
+        minutos_preparacion,
+    };
+    //Validamos que los datos introducidos son correctos
+    const result = validatePartialRecipe(updatedRecipe);
+    if (result.error) {
+        res.redirect("/errorPage");
+    } else {
+        await pool.query("UPDATE recetas SET ? WHERE id = ?", [result, id]); // Actualizamos la receta en la BBDD
+        res.redirect("/recipes");
     }
-    await pool.query('UPDATE recetas SET ?', [updatedRecipe, id]) // Actualizamos la receta en la BBDD
-    res.redirect('/recipes');
 })
 
 //Eliminar receta
