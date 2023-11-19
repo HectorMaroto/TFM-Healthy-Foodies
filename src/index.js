@@ -8,7 +8,9 @@ const path = require('node:path'); // Para trabajar con las rutas de las carpeta
 const { engine } = require('express-handlebars'); // Importamos el motor de handlebars
 const home = require('./routes/home');
 const errorRouter = require('./routes/error.js');
+const foods = require('./routes/foods.js');
 const app = express(); // Inicializamos express
+const session = require('express-session');
 
 
 //Configuramos handlebars como motor de vistas para la aplicacion
@@ -20,6 +22,13 @@ app.engine('.hbs', engine({
     extname: '.hbs' // Extension de las vistas
 }))
 app.set('view engine', '.hbs'); // Establecemos como motor de vistas a handlebars
+
+
+app.use(session({ // Con express-session determinamos cuando un usuario ha iniciado sesion y tiene acceso a rutas
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+}))
 
 
 // Cargamos el contenido del archivo .env que contiene las variables de entorno
@@ -42,11 +51,13 @@ app.use(express.urlencoded({ extended: false })); // Para aceptar los datos que 
 // Para la seccion de recetas
 app.use('/recipes', recipes)
 // Para la seccion de usuarios
-app.use(users)
+app.use('/', users)
 // Pagina de inicio
-app.use('/', home);
+app.use('/home', home);
 // Pagina de error
 app.use('/', errorRouter);
+// Pagina lista de la compra
+app.use('/foods', foods);
 
 
 //Carpeta Public para archivos estaticos como estilos, imagenes, scripts... Dejamos definida sus ubicacion con path.join
@@ -54,5 +65,5 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 // Iniciamos el servidor de la app con 'npm run start' (configurado como script de npm en package.json)
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server running on http://localhost:${PORT}/signUp`);
 })

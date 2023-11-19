@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Foodies</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+        body{
+            background-color: bisque;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar{
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            z-index: 999;
+        }
+
+        .nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+            padding: 3px 10px;
+            background: linear-gradient(to bottom, #0049b0, #0049b0, #3083ff, #629bf1);
+            height: auto;
+            border-bottom: 2px solid #000;
+        }
+
+        .title{
+            font-family: 'Tilt Neon', sans-serif;
+            font-size: 36px;
+            margin: 10px 15px;
+        }
+
+        .title-login h1{
+            font-family: 'Nunito', sans-serif;
+            color: #fff;
+        }
+
+        .main-container-login{
+            width: 100%;
+            height: auto;
+            margin: 15px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-form{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(to bottom, #0242a2, #032d6b, #000, #000, #3e3e3e);
+            padding: 25px 30px;
+            border-radius: 5px;
+            box-shadow: 2px 5px 10px #000;
+            transition: all 0.5s ease;
+            width: 600px;
+            height: 400px;
+        }
+
+        .login-form > .input-field-login input{
+            width: 400px;
+            height: 30px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Nunito', sans-serif;
+            font-size: 20px;
+            transition: all 0.5s ease;
+        }
+
+        .login-form >.input-field-login input:focus{
+            box-shadow: 0 0 5px #fff, 
+                        0 0 10px #fff;
+        }
+
+        .login-form >.input-field-login input::placeholder{
+            color: #aaa9a9;
+        }
+
+        .login-form .input-field-login input[type="submit"]{
+            cursor: pointer;
+        }
+
+        .login-form .input-field-login input[type="submit"]:hover{
+            width: 153px;
+            background-color: #032d6b;
+        }
+
+        .login-sign a{
+            color: white;
+            font-family: 'Nunito', sans-serif;
+            transition: all 0.5s ease;
+            text-decoration: none;
+        }
+
+        .login-sign a:hover{
+            color: #979494;
+        }
+
+        @media (max-width: 682px){
+            .login-form{
+                padding: 35px 20px;
+                width: auto;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 475px){
+            .login-form > .input-field-login input{
+                width: 200px;
+                font-size: 16px;
+            }
+            .title-login h1{
+                font-size: 28px;
+            }
+        }
+    </style>
+
+    <div class="navbar">
+        <div class="nav">
+            <div class="title">
+                <span>Healthy Foodies</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-container-login">
+        <form action="/login/loginUser" method="POST" class="login-form">
+        <div class="title-login">
+            <h1>Iniciar Sesión</h1>
+        </div>
+            <div class="input-field-login">
+                <input type="email" name="email" placeholder="E-mail" required>
+            </div>
+            <div class="input-field-login">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="input-field-login">
+                <input type="submit" value="Iniciar sesión">
+            </div>
+            <div class="login-sign">
+                <a href="/signUp">Registro de usuario</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+

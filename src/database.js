@@ -4,7 +4,7 @@ const database = {
     user: 'root',
     password: '',
     database: 'tfm',
-    port: 3360
+    port: 3306
 }
 
 // Exportamos el objeto database
