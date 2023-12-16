@@ -23,11 +23,11 @@ app.engine('.hbs', engine({
 }))
 app.set('view engine', '.hbs'); // Establecemos como motor de vistas a handlebars
 
-
-app.use(session({ // Con express-session determinamos cuando un usuario ha iniciado sesion y tiene acceso a rutas
-    secret: 'secret',
-    resave: true,
-    saveUninitialized: true
+// Con express-session determinamos cuando un usuario ha iniciado sesion y tiene acceso a rutas
+app.use(session({ 
+    secret: 'aplicacionHealthyFoods',
+    resave: false,
+    saveUninitialized: false,
 }))
 
 

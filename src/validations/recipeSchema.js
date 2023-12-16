@@ -6,7 +6,8 @@ const recipeSchema = z.object({
     nombre: z.string().max(45),
     ingredientes: z.string().max(255),
     descripcion: z.string().max(8192),
-    minutos_preparacion: z.number().positive()
+    minutos_preparacion: z.number().positive(),
+    idUsuario: z.number()
 })
 
 // Ahora creamos una funcion validadora para cuando el usuario introduzca una nueva receta
