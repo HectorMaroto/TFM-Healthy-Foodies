@@ -1,0 +1,78 @@
+.food-list-intro{
+    margin: 15px 10px;
+    padding: 10px;
+}
+
+.container-add-foods{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.food-list-form{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 20px;
+}
+
+.food-list-form .input-field-add-food input{
+    width: auto;
+    height: 30px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #000;
+    font-size: 20px;
+    transition: all 0.5s ease;
+    border: 1px solid #fff;
+}
+
+.food-list-form .add-food button{
+    width: auto;
+    height: 35px;
+    color: #000;
+    background-color: transparent;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.5s ease all;
+    border: 1px solid #fff;
+}
+
+.food-list-form .add-food button:hover{
+    cursor: pointer;
+}
+
+.food-list{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.food-list .list-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #8f9dfb;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    transition: 0.5s ease all;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.food-list .list-item:hover{
+    transform: scale(1.02);
+}
+
+.food-list .list-item .item-name{
+    font-weight: bold;
+}
+
+.food-list .list-item a{
+    color: #ff0909;
+}

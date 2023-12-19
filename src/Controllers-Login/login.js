@@ -53,7 +53,7 @@ function loginUser(req, res) {
                 res.redirect("/errorPageSign");
               } else {
                 req.session.loggedin = true; // Creamos una sesion al estar loggeados
-                req.session.user = { ...el }; // Asignamos el usuario de la sesion
+                req.session.user = { ...el }; // Asignamos el usuario que se loggea a la sesion
               }
               if (req.session.loggedin) {
                 res.redirect("/recipes");

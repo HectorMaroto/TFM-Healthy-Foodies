@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { storeUser, loginUser, logout } = require("../Controllers-Login/login.js");
+const { storeUser, loginUser, logout } = require("../controllers-login/login.js");
 
 // Vista de registro de usuario
 router.get("/signUp", (req, res) => {

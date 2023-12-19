@@ -1,19 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
-body{
-    font-family: 'Lato', sans-serif;
-}
-
 .intro{
-    margin: 25px auto;
+    margin: 15px;
     height: auto;
-    background-color: bisque;
     color: #000;
-    text-align: center;
     padding: 10px;
     width: auto;
-    font-size: 18px;
 }
 
 .main-container-list{
@@ -94,7 +84,7 @@ body{
 
 .add-recipe-btn{
     text-align: center;
-    width: 150px;
+    width: 180px;
     height: auto;
     margin: 20px auto;
     border: 2px solid #000;
@@ -102,7 +92,6 @@ body{
     padding: 15px;
     background-color: #3083ff;
     transition: all 0.7s ease;
-    font-family: 'Lato', sans-serif;
     box-shadow: 2px 5px 10px #000;
 }
 
@@ -115,7 +104,7 @@ body{
 }
 
 .add-recipe-btn:hover{
-    width: 180px;
+    width: 190px;
     background-color: #032d6b;
     box-shadow: 2px 5px 20px #000;
 }
@@ -139,7 +128,6 @@ body{
 .no-recipe p{
     color: #000;
     font-size: large;
-    font-family: 'Tilt Neon', sans-serif;
 }
 
 .no-recipe p a{

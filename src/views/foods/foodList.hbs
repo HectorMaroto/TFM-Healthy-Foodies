@@ -1,0 +1,30 @@
+<div class="food-list-intro">
+    <h2>Lista de La compra</h2>
+    <b>Hola Usuario</b>, aquí podrás crear una lista con tus productos y alimentos favoritos.
+</div>
+<section class="container-add-food">
+    <form action="/foods" method="POST" class="food-list-form">
+        <div class="input-field-add-food">
+            <input type="text" name="nombre" placeholder="Escribe un producto" required autofocus>
+        </div>
+        <div class="add-food">
+            <button type="submit">
+                <span class="material-symbols-outlined">add</span>
+            </button>
+        </div>
+    </form>
+    <article class="food-list">
+        {{#each list}}<!--Recorremos todo el array de recetas que obtenemos de la BBDD y pasamos desde el backend--> 
+            <div class="list-item">
+                <p class="item-name">
+                    {{nombre}}
+                </p>
+                <a href="/foods/delete/{{id}}">
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>
+                </a>
+            </div>
+        {{/each}}
+    </article>
+</section>

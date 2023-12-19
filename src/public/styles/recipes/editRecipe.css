@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 
 .main-container-edit {
     width: 100%;
@@ -33,7 +33,7 @@
     border-radius: 5px;
     background-color: #000;
     color: #fff;
-    font-family: 'Nunito', sans-serif;
+    
     font-size: 20px;
     transition: all 0.5s ease;
 }

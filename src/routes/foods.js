@@ -7,9 +7,36 @@ const router = express.Router();
 
 // Obtenemos el listado de recetas
 router.get('/', async (req, res) => {
-    const listaAlimentos = await pool.query('SELECT * FROM alimentos');
-    res.render('foods/foodList', { listaAlimentos });
+    if (req.session.loggedin) {
+        const list = await pool.query('SELECT * FROM alimentos WHERE idUsuario = ?', [req.session.user.id]);
+        res.render('foods/foodList', { list });
+    } else {
+        res.redirect('/errorPageSign')
+    }
 })
 
+router.post('/', async (req, res) => {
+    if (req.session.loggedin) {
+        const { nombre } = req.body;
+        const newFood = {
+            nombre,
+            idUsuario: req.session.user.id
+        }
+        await pool.query('INSERT INTO alimentos SET ?', [newFood])
+        res.redirect('/foods');
+    } else {
+        res.redirect('/errorPageSign')
+    }
+})
+
+router.get('/delete/:id', async (req, res) => {
+    if (req.session.loggedin) {
+        const { id } = req.params;
+        await pool.query('DELETE FROM alimentos WHERE id = ?', [id])
+        res.redirect('/foods')
+    } else {
+        res.redirect('/errorPageSign')
+    }
+})
 
 module.exports = router;
