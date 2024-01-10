@@ -11,7 +11,12 @@ const errorRouter = require('./routes/error.js');
 const foods = require('./routes/foods.js');
 const app = express(); // Inicializamos express
 const session = require('express-session');
+const imc = require('./routes/imc.js');
 
+// Desactivamos esta cabecera de Express por temas de seguridad
+// Porque proporciona información acerca de la versión que estás utilizando de Express
+// Y podrían realizar ataques dedicados a Express
+app.disable('x-powered-by')
 
 //Configuramos handlebars como motor de vistas para la aplicacion
 app.set('views', path.join(__dirname, 'views')) //Ubicacion de la carpeta views
@@ -50,7 +55,7 @@ app.use(express.urlencoded({ extended: false })); // Para aceptar los datos que 
 // Rutas
 // Para la seccion de recetas
 app.use('/recipes', recipes)
-// Para la seccion de usuarios
+// Para las rutas de usuarios
 app.use('/', users)
 // Pagina de inicio
 app.use('/home', home);
@@ -58,7 +63,8 @@ app.use('/home', home);
 app.use('/', errorRouter);
 // Pagina lista de la compra
 app.use('/foods', foods);
-
+// Pagina calculadora IMC
+app.use('/imc-calculator', imc);
 
 //Carpeta Public para archivos estaticos como estilos, imagenes, scripts... Dejamos definida sus ubicacion con path.join
 app.use(express.static(path.join(__dirname, 'public')))

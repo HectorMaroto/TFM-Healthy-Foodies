@@ -1,0 +1,58 @@
+.imc-title{
+    margin: 15px 0 0 15px;
+    height: auto;
+    padding: 5px 0 0 5px;
+    width: auto;
+}
+
+.instructions{
+    margin-left: 15px;
+    height: auto;
+    padding: 0 0 0 5px;
+    width: auto;
+}
+
+.calculator{
+    width: auto;
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.calculator input[type="text"]{
+    min-height: 1.5em;
+    width: auto;
+}
+
+.calculate-imc{
+    width: auto;
+    padding: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.calculate-imc button{
+    border-radius: 5px;
+    padding: 0.25em;
+    background-color: #fff;
+    font-size: 20px;
+    background-color: #3083ff;
+}
+
+.calculate-imc button:hover{
+    cursor: pointer;
+}
+
+.result{
+    text-align: center;
+    font-weight: bold;
+    width: auto;
+    padding: 5px;
+    margin: 5px;
+}
