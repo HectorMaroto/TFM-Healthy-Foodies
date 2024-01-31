@@ -1,6 +1,7 @@
 // Imports
 // Importamos express para usarlo en nuestro proyecto
 const express = require('express');
+const app = express(); // Inicializamos express
 const morgan = require('morgan');
 const recipes = require('./routes/recipes.js'); // Guardamos el router de las recetas
 const users = require('./routes/users.js'); // Guardamos el router de los usuarios
@@ -9,9 +10,8 @@ const { engine } = require('express-handlebars'); // Importamos el motor de hand
 const home = require('./routes/home');
 const errorRouter = require('./routes/error.js');
 const foods = require('./routes/foods.js');
-const app = express(); // Inicializamos express
-const session = require('express-session');
 const imc = require('./routes/imc.js');
+const session = require('express-session');
 
 // Desactivamos esta cabecera de Express por temas de seguridad
 // Porque proporciona información acerca de la versión que estás utilizando de Express
@@ -65,6 +65,8 @@ app.use('/', errorRouter);
 app.use('/foods', foods);
 // Pagina calculadora IMC
 app.use('/imc-calculator', imc);
+// Página de contacta con nosotros
+// app.use('/contact-us');
 
 //Carpeta Public para archivos estaticos como estilos, imagenes, scripts... Dejamos definida sus ubicacion con path.join
 app.use(express.static(path.join(__dirname, 'public')))

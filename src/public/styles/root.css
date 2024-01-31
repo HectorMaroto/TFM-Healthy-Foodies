@@ -1,5 +1,5 @@
 html{
-    background-color: rgb(211, 227, 255);
+    background: linear-gradient(to bottom, rgb(211, 227, 255), rgb(170, 197, 242), rgb(84, 122, 184))
 }
 
 body{

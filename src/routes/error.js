@@ -7,8 +7,7 @@ router.get('/errorPage', (req, res) => {
 })
 
 router.get('/errorPageSign', (req, res) => {
-    res.setHeader('Content-Type', 'text/html')
-    res.sendFile('/TFM/src/views/errorPageLogin.hbs');
+    res.render('errorPageLogin')
 })
 
 module.exports = router;

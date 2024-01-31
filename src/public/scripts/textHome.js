@@ -1,16 +1,16 @@
 // En este fragmento de codigo creamos una animacion para que las recetas guardadas por el usuario vayan 
 // apareciendo segun scrollea por la pagina de 'Tus recetas'
 
-const elementos = document.querySelectorAll('.card-container-list');
+const elements = document.querySelectorAll('.section');
 
-function mostrarScroll() {
+function mostrarTextoScroll() {
     let scrollTop = document.documentElement.scrollTop; //Cantidad de pixeles de scroll que voy haciendo segun voy bajando
-    for (let i = 0; i < elementos.length; i++){
-        let alturaElemento = elementos[i].offsetTop; //Altura desde inicio de la ventana hasta donde esta el elemento
+    for (let i = 0; i < elements.length; i++){
+        let alturaElemento = elements[i].offsetTop; //Altura desde inicio de la ventana hasta donde esta el elemento
         if (alturaElemento - 450 < scrollTop) {
-            elementos[i].style.opacity = 1;
+            elements[i].style.opacity = 1;
         }
     }
 }
 
-window.addEventListener('scroll', mostrarScroll);
+window.addEventListener('scroll', mostrarTextoScroll);

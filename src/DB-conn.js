@@ -24,7 +24,7 @@ pool.getConnection((err, connection) => {
 // Si la conexion es exitosa liberamos los recursos utilizados, pero la pool sigue funcionando para poteriores peticiones a la base
     if (connection) connection.release(); 
     console.log('DB is connected');
-    return; // Retornamos la pool de conexiones
+    return; // Retornamos la conn a la pool de conexiones
 })
 
 //PROMISIFY con POOL QUERIES

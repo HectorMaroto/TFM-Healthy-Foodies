@@ -1,0 +1,80 @@
+.slider{
+    width: 100%;
+    height: 420px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.slider > .slide img{
+    height: 100%;
+    width: auto;
+    transition: .7s ease-in-out all;
+    filter: grayscale(1);
+    object-fit: cover;
+}
+
+.slide img:hover{
+    filter: grayscale(0);
+    cursor: crosshair;
+    transform: scale(1.05);
+}
+
+.main-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'section1 .'
+                         '. section2'
+                         'section3 .'
+                         '. section4';
+}
+
+.main-container h2{
+    color: #000;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.main-container .section{
+    text-align: center;
+    margin: auto;
+    opacity: 0;
+    transition: all 0.7s ease;
+}
+
+.main-container .sect-1{
+    grid-area: section1;
+}
+.main-container .sect-2{
+    grid-area: section2;
+}
+.main-container .sect-3{
+    grid-area: section3;
+}
+.main-container .sect-4{
+    grid-area: section4;
+}
+
+.main-container .section p a{
+    color: #000;
+    text-decoration: none;
+    transition: .7s all ease;
+}
+
+.main-container .section p a:hover{
+    color: #949292;
+}
+
+@media (max-width: 1072px) {
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .main-container .section p{
+        font-size: 1rem;
+    }
+}

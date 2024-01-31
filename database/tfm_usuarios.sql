@@ -27,9 +27,9 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(45) DEFAULT NULL,
   `apellidos` varchar(80) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
-  `password` varchar(45) DEFAULT NULL,
+  `password` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Mü','eververv','hecmar548@gmail.com','$2b$12$5kGtXFBvQweetTp1vSyCq.NU2q1TSIwy1apx/s');
+INSERT INTO `usuarios` VALUES (12,'Pepe','evr','hecmar548@gmail.com','$2b$12$JOSzKzC3ScT/kPpSnO76YOsfD3EhhoC8PFwpUA2ypbqOxQiA8A80m'),(13,'Paco','perez','carlosjhz1@hotmail.com','$2b$12$iXNfHTOuuf2qqqDpvEwKceL1vzVTwSFHSODa5rgr8u9iWAkzuMkKa'),(14,'wwecwec','wecwecw','test@test.com','$2b$12$i8GfIEzOmdq0ftzQkgaeHOBp0QpUo3UQ8wqxHILf0ko/2/UArO5Hu');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-19 13:22:06
+-- Dump completed on 2023-12-17 19:19:56

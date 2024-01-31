@@ -56,7 +56,7 @@ function loginUser(req, res) {
                 req.session.user = { ...el }; // Asignamos el usuario que se loggea a la sesion
               }
               if (req.session.loggedin) {
-                res.redirect("/recipes");
+                res.redirect("/home");
               }
             }
           );
