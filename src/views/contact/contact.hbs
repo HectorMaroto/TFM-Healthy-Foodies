@@ -1,0 +1,21 @@
+<div class="contact-title">
+    <h2>Contacta con nosotros</h2>
+    <p><b>Hola Usuario, rellena este formulario para comunicarnos cualquier asunto o duda.</p>
+</div>
+<div class="main-container-contact">
+    <form action="mailto:hecmar548@gmail.com" method="POST" class="form-contact"> <!--El correo se enviará a mi correo personal para simular la atencion al cliente-->
+        <div class="input-field-contact">
+            <input type="text" name="nombre" placeholder="Nombre" required autofocus>
+        </div>
+        <div class="input-field-contact">
+            <input type="text" name="asunto" placeholder="Asunto" required>
+        </div>
+        <div class="input-field-contact">
+            <textarea style="height: 100px;" name="descripcion" id="descripcion"  cols="10" rows="10" placeholder="Explique el motivo de su consulta"
+                required></textarea>
+        </div>
+        <div class="input-field-contact">
+            <input type="submit" value="Enviar">
+        </div>
+    </form>
+</div>

@@ -12,6 +12,7 @@ const errorRouter = require('./routes/error.js');
 const foods = require('./routes/foods.js');
 const imc = require('./routes/imc.js');
 const session = require('express-session');
+const contact = require('./routes/contact.js');
 
 // Desactivamos esta cabecera de Express por temas de seguridad
 // Porque proporciona información acerca de la versión que estás utilizando de Express
@@ -66,7 +67,7 @@ app.use('/foods', foods);
 // Pagina calculadora IMC
 app.use('/imc-calculator', imc);
 // Página de contacta con nosotros
-// app.use('/contact-us');
+app.use('/contact-us', contact);
 
 //Carpeta Public para archivos estaticos como estilos, imagenes, scripts... Dejamos definida sus ubicacion con path.join
 app.use(express.static(path.join(__dirname, 'public')))

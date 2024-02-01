@@ -1,5 +1,5 @@
-// En este fragmento de codigo creamos una animacion para que las recetas guardadas por el usuario vayan 
-// apareciendo segun scrollea por la pagina de 'Tus recetas'
+// En este fragmento de codigo creamos una animacion para que el texto vaya
+// apareciendo segun se scrollea
 
 const elements = document.querySelectorAll('.section');
 

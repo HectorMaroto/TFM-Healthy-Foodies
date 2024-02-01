@@ -21,6 +21,6 @@ slider.addEventListener('mouseout', () => {
     start(); //Cuando quitamos el cursor de encima, vuelve a continuar.
 });
 
-window.addEventListener('load', start()); //Iniciamos el movimiento del slider nada mas cargar la pagina
+window.addEventListener('DOMContentLoaded', start()); //Iniciamos el movimiento del slider nada mas cargar la pagina
 
 

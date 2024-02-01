@@ -25,6 +25,7 @@
 .calculator input[type="text"]{
     min-height: 1.5em;
     width: auto;
+    font-family: inherit;
 }
 
 .calculate-imc{
@@ -43,6 +44,7 @@
     background-color: #fff;
     font-size: 20px;
     background-color: #3083ff;
+    font-family: inherit;
 }
 
 .calculate-imc button:hover{

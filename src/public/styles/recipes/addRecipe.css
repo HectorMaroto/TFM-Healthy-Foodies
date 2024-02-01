@@ -32,6 +32,7 @@
     background-color: #000;
     color: #fff;
     font-size: 20px;
+    font-family: inherit;
     transition: all 0.5s ease;
 }
 
@@ -51,7 +52,7 @@
 }
 
 .form .input-field-add input[type="submit"]:hover{
-    width: 153px;
+    width: 200px;
     background-color: #032d6b;
 }
 
